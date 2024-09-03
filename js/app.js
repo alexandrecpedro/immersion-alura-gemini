@@ -56,13 +56,13 @@ function pesquisar() {
   config[resultConfig].apply(section, filteredResults);
 }
 
-function createLink({ href, target = "_blank", textContent }) {
+const createLink = ({ href, target = "_blank", textContent }) => {
   const link = document.createElement("a");
   link.href = href;
   link.target = target;
   link.textContent = textContent;
   return link;
-}
+};
 
 const createParagraph = ({ classList, textContent }) => {
   const paragraph = document.createElement("p");
