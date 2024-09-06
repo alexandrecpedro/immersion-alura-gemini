@@ -1,19 +1,32 @@
 function pesquisar() {
   const input = document.getElementById("athlete_name");
   const section = document.getElementById("research-results");
-  const research = input.value.toLowerCase();
+  const research = String(input.value.toLowerCase()).trim();
+
+  // if (!research.length) {
+  //   section.innerHTML =
+  //     "<p>Nenhum resultado encontrado. Digite o nome de um(a) atleta ou esporte</p>";
+  //   return;
+  // }
 
   const fragment = document.createDocumentFragment();
 
   const filteredResults = dataArray.filter((athlete) => {
-    return athlete.title.toLowerCase().includes(research);
+    const titleMatch = athlete.title.toLowerCase().includes(research);
+    const descriptionMatch = athlete.description
+      .toLowerCase()
+      .includes(research);
+    const tagsMatch = athlete.tags.toLowerCase().includes(research);
+
+    return titleMatch || descriptionMatch || tagsMatch;
   });
 
   const config = {
     noResults: {
-      message: "<p>Nenhum resultado encontrado.</p>",
+      message:
+        "<p>Nenhum resultado encontrado. Digite o nome de um(a) atleta ou esporte</p>",
       apply: (section) => {
-        section.innerHTML = this.message;
+        section.innerHTML = config.noResults.message;
       },
     },
     hasResults: {
