@@ -25,6 +25,7 @@
 <h2> 📓 The Project </h2>
 <p> For sports enthusiasts seeking comprehensive information about their favorite athletes or sports, this application serves as an invaluable resource. It offers a swift and user-friendly means of accessing detailed data.</p>
 </div>
+<br>
 
 <div id="howitworks">
 <h2> 💡 How it works? </h2>
