@@ -166,7 +166,7 @@ footer {
   /* Cor do texto */
   text-align: center;
   /* Alinha o texto ao centro */
-  padding: 0;
+  padding: 10px;
   /* Espaçamento interno */
   width: 100%;
   /* Largura total da página */
@@ -176,6 +176,10 @@ footer {
   /* Alinha ao fundo da página */
   font-size: 1rem;
   /* Tamanho da fonte */
+}
+
+footer p {
+  margin: 10px 0;
 }
 
 @media (max-width: 768px) {
